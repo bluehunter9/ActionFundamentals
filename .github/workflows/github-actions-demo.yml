@@ -17,5 +17,6 @@ jobs:
       - run: echo "triggered by:" ${{ github.event_name }} ${{ github.event.action }}
       - run: echo "referencing branch:" ${{ github.repository }} ${{ github.ref }}
       - run: |
-          echo "::set-output name=FILELIST::$(find . -name '*' -print)"
+          echo "Following files listed:"
+          tree
   
