@@ -14,8 +14,8 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.event_name }}
-      - run: echo ${{ github.head_ref || github.ref_name }} 
+      - run: echo "triggered by:" ${{ github.event }}
+      - run: echo "referencing branch:" ${{ github.head_ref || github.ref_name }} 
       - run: |
           echo "::set-output name=FILELIST::$(find . -name '*' -print)"
   
